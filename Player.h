@@ -8,7 +8,7 @@ class Player : public Character
 {
 
 public:
-	Player(float Health, float AtkPower, float Armor, std::string Name, int CoolDown);
+	Player(float MaxHealth, float AtkPower, float Armor, std::string Name, int CoolDown, int MaxStamina);
 
 	void DisplayStatus() const;
 	Action ChooseAction() override;

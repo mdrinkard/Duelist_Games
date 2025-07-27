@@ -5,7 +5,7 @@
 #include <iostream>
 
 
-Player::Player(float Health, float AtkPower, float Armor, std::string Name, int CoolDown) : Character(Health, AtkPower, Armor, Name, CoolDown)
+Player::Player(float MaxHealth, float AtkPower, float Armor, std::string Name, int CoolDown, int MaxStamina) : Character(MaxHealth, AtkPower, Armor, Name, CoolDown, MaxStamina)
 {
 
 }
@@ -84,11 +84,11 @@ void Player::DisplayStatus() const
 
     if (!CanExecute())
     {
-        std::cout << "Parry Cooldown: " << GetCoolDown() << " turn(s) left\n";
+        std::cout << "Heavy Attack CoolDown:  " << GetCoolDown() << " turn(s) left\n";
     }
     else
     {
-        std::cout << "Parry is ready\n";
+        std::cout << "Heavy Attack is Ready!\n";
     }
 
     std::cout << "========================\n\n";
@@ -96,32 +96,35 @@ void Player::DisplayStatus() const
 
 Action Player::ChooseAction()
 {
-	int Input;
-	while (true)
+    int Input;
+    while (true)
     {
-        Log::LogMessage(LOG_DEFAULT, "Choose an Action - (1: Attack, 2: Parry, 3: Defend)");
-        if (!CanExecute())
-            std::cout << "Parry is on cooldown for " << GetCoolDown() << " more turn(s)!\n";
-
+        Log::LogMessage(LOG_DEFAULT, "Choose an Action - (1: Attack, 2: Parry, 3: Defend, 4: Heavy Attack, 5: Dodge)");
         std::cin >> Input;
 
-        if (std::cin.fail() || Input < 1 || Input > 3)
+        if (std::cin.fail() || Input < 1 || Input > 5)
         {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            Log::LogMessage(LOG_ERROR, "Invalid Input: You must enter 1, 2, or 3 (Attack, Parry, Defend)");
+            Log::LogMessage(LOG_ERROR, "Invalid Input: Choose between 1 and 5.");
             continue;
         }
 
-        if (Input == 2 && !CanExecute())
+        if ((Input == 4) && !CanExecute())
         {
-            Log::LogMessage(LOG_ERROR, "You can't use Parry right now. Choose another action.");
+            Log::LogMessage(LOG_ERROR, "Heavy Attack is on cooldown. Choose another action.");
             continue;
         }
+
+        if ((Input == 2 || Input == 4 || Input == 5) && Stamina == 0)
+        {
+            Log::LogMessage(LOG_ERROR, "You are out of stamina for that action!");
+            continue;
+        }
+
         break;
     }
-	Input -= 1;
 
-	return GetActionFromInput(Input);
-
+    Input -= 1;  // Adjust for enum
+    return GetActionFromInput(Input);
 }
