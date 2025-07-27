@@ -11,7 +11,7 @@ class Enemy : public Character
 {
 public:
 	//Constructor
-	Enemy(float Health, float AtkPower, float Armor, std::string Name, int CoolDown);
+	Enemy(float MaxHealth, float AtkPower, float Armor, std::string Name, int CoolDown, int MaxStamina);
 
 	void PrintLootTable() const;
 	Action ChooseAction() override;

@@ -7,10 +7,11 @@ struct Item {
     int BonusHealth = 0;
     int BonusAtk = 0;
     int BonusArmor = 0;
+    int BonusStamina = 0;
     int DropChance;
 
-    Item(const std::string& name, int hp = 0, int atk = 0, int armor = 0, int DropChance=0)
-        : Name(name), BonusHealth(hp), BonusAtk(atk), BonusArmor(armor), DropChance(DropChance)
+    Item(const std::string& name, int hp = 0, int atk = 0, int armor = 0, int DropChance = 0, int BonusStamina = 0)
+        : Name(name), BonusHealth(hp), BonusAtk(atk), BonusArmor(armor), DropChance(DropChance), BonusStamina(BonusStamina)
     {
     }
 
