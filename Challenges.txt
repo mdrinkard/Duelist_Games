@@ -1,0 +1,10 @@
+
+1st
+Fix bugs
+Increase Difficulty fixed. Break's werent included in switch
+Enemy health wasnt reseting. Made reset health function
+Fix Parry System
+
+2nd
+Leveling up the Hero
+Enemies drop random items from a loot table
