@@ -71,20 +71,26 @@ void Enemy::InitializeLootTable(int RoundNumber)
 	{
 	case 1:
 		// Basic Goblin loot
-		LootTable.push_back(Item("Rusty Dagger", 0, 2, 0, 0, 40)); 
-		LootTable.push_back(Item("Rusty Shield", 0, 0, 2, 0, 40));
+		LootTable.push_back(Item("Rusty Dagger", 0, 2, 0, 0, 50)); 
+		LootTable.push_back(Item("Rusty Buckler", 0, 0, 1, 1, 50));
+		LootTable.push_back(Item("Rusty Helmet", 0, 0, 2, 0, 25));
+		LootTable.push_back(Item("Goblin Charm", 1, 1, 1, 1, 25));
 		break;
 
 	case 2:
 		// Goblin Warrior loot
 		LootTable.push_back(Item("Steel Sword", 0, 4, 0, 0, 35));
-		LootTable.push_back(Item("Chainmail Fragment", 5, 0, 2, 0, 25));
+		LootTable.push_back(Item("Steel Shield", 0, 0, 4, 0, 25));
+		LootTable.push_back(Item("Warrior's Leather Armor", 2, 1, 2, 2, 25));
+		LootTable.push_back(Item("Goblin Totem", 2, 2, 2, 2, 25));
 		break;
 
 	case 3:
 		// Goblin Chief loot
 		LootTable.push_back(Item("Chief's Axe", 0, 6, 0, 0, 30));
 		LootTable.push_back(Item("Chief's Helmet", 10, 0, 4, 0, 20));
+		LootTable.push_back(Item("Tower Shield", 0, 2, 6, 0, 25));
+		LootTable.push_back(Item("Chieftan's Banner", 3, 3, 3, 3, 25));
 		break;
 
 	case 4:

@@ -2,12 +2,14 @@
 #include <iostream>
 #include <vector>
 
+//enum  -- enumeration
 enum LogType
 {
-	LOG_DEFAULT,
-	LOG_INFO, //0
-	LOG_WARNING, //1
-	LOG_ERROR //2
+	GAME_LOG_DEFAULT,
+	GAME_LOG_INFO,
+	GAME_LOG_WARNING,
+	GAME_LOG_ERROR
+
 };
 
 struct LogEntry

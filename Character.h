@@ -57,6 +57,7 @@ protected:
 	float Health;
 	float Armor;
 	float AtkPower;
+
 	int CoolDown;
 	int MaxStamina;
 	int Stamina;
