@@ -1,18 +1,22 @@
-Here is my Dueling game. 
+Here is my dueling game.
 
-Features are:
+Raylib integration
+Ui Contains: Combat Log, Player/Enemy Stats and a Message prompt.
 
-Actions 
-  Attack
-  Parry
-    Has CoolDown
-  Defend
+Enemy: Can Attack, Parry, Defend, Heavy Attack, and Dodge. Stamina functionality works. And might be able to drop item.
 
-Enemies have
-  Loot Table
-  Give Experience
-Player Can
-  Equip Items
-  Level up
+Hero:  Can Attack, Parry, Defend, Heavy Attack, and Dodge. Stamina functionality works. Might be able to equip item and level up.
 
-Armor works.
+Bugs:
+Have an old bug where the enemies health doesnt reset everytime he dies.
+The Levelup function is outputting in the console. Not sure if it works.
+
+Tweaks to be done:
+Text display tweaks, combat log and user stats too close. 
+Add input system for whether or not to equip item.
+Check if inventory drops properly and is equipped properly. Also check if it is displayed correctly.
+
+Upcoming changes:
+Rectangle box for Combat log and Ui.
+Inventory system maybe?
+Animations?
