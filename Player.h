@@ -10,7 +10,7 @@ class Player : public Character
 public:
 	Player(float MaxHealth, float AtkPower, float Armor, std::string Name, int CoolDown, int MaxStamina);
 
-	void DisplayStatus() const;
+	
 	Action ChooseAction() override;
 
 
@@ -23,21 +23,21 @@ public:
 	float GetAtkPower() const override;
 	float GetArmor() const override;
 
+	const Item& GetEquippedItem() const { return EquippedItem; }
 	void EquipItem(const Item& item);
 	/*void UnequipItem();*/
 
 private:
-	int ParryCooldown = 0;
 
 	// Leveling system
 	int Level = 1;
 	int Experience = 0;
 	int ExperienceToLevel = 20;  // Experience needed to level up
 
+	Item EquippedItem = Item("None");
 	void LevelUp();
 
 protected:
-	Item EquippedItem{ "None" };
 
 };
 
