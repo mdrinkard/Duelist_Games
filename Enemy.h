@@ -17,6 +17,7 @@ public:
 	Action ChooseAction() override;
 	void IncreaseDifficulty(int RoundNumber);
 
+
 	void AddItem(const Item& item);
 	Item RollLoot();
 

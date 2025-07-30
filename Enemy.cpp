@@ -10,6 +10,8 @@ Enemy::Enemy(float MaxHealth, float AtkPower, float Armor, std::string Name, int
 	InitializeLootTable(1);
 }
 
+
+
 Action Enemy::ChooseAction()
 {
 	int Input;
@@ -53,7 +55,9 @@ Item Enemy::RollLoot()
 
 	for (const auto& item : LootTable)
 	{
+		//std::cout << "Rolling for " << item.Name << " with DropChance " << item.DropChance << std::endl;
 		int roll = dist(gen);
+		//std::cout << "Roll result: " << roll << std::endl;
 		if (roll <= item.DropChance)
 		{
 			return item;
@@ -70,11 +74,11 @@ void Enemy::InitializeLootTable(int RoundNumber)
 	switch (RoundNumber)
 	{
 	case 1:
-		// Basic Goblin loot
+		// Basic Goblin loot Health, AtkPower, Armor, Stamina, DropChance
+		LootTable.push_back(Item("Goblin Charm", 1, 1, 1, 1, 100));
 		LootTable.push_back(Item("Rusty Dagger", 0, 2, 0, 0, 50)); 
 		LootTable.push_back(Item("Rusty Buckler", 0, 0, 1, 1, 50));
 		LootTable.push_back(Item("Rusty Helmet", 0, 0, 2, 0, 25));
-		LootTable.push_back(Item("Goblin Charm", 1, 1, 1, 1, 25));
 		break;
 
 	case 2:
@@ -149,7 +153,7 @@ void Enemy::PrintLootTable() const {
 	}
 
 	for (const auto& item : LootTable) {
-		std::cout << "  - Name: " << item.Name<< "\n";
+		std::cout << "  - Name: " << item.Name << "\n";
 	}
 }
 

@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Log">
       <UniqueIdentifier>{16b3af18-eee0-4dc5-85c8-342cff9c185b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Ui">
+      <UniqueIdentifier>{15467916-20f2-48c4-b478-1f7c91d4dbbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Ui">
+      <UniqueIdentifier>{05eb1765-6769-4bdb-8e52-97abab0a09eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -48,6 +54,9 @@
     <ClCompile Include="Log.cpp">
       <Filter>Source Files\Log</Filter>
     </ClCompile>
+    <ClCompile Include="UserInterface.cpp">
+      <Filter>Source Files\Ui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
@@ -64,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="Log.h">
       <Filter>Header Files\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface.h">
+      <Filter>Header Files\Ui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
