@@ -24,6 +24,7 @@ public:
 
 	std::string GetName() const { return Name; };
 	Action GetActionFromInput(int Input);
+	float GetMaxHealth() const { return MaxHealth; };
 	virtual float GetHealth() const { return Health; };
 	virtual float GetArmor() const { return Armor; };
 	virtual float GetAtkPower() const { return AtkPower; }
